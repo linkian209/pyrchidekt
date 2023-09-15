@@ -5,6 +5,10 @@ from __future__ import annotations
 from enum import Enum
 
 class Format(Enum):
+    """Enumerated wrapper around the format code
+    
+    This class is a wrapper around the deck format codes Archidekt uses
+    """
     STANDARD = 1
     MODERN = 2
     COMMANDER_EDH = 3
