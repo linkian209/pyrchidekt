@@ -1,0 +1,53 @@
+name: Tests
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "*.md"
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - "*.md"
+jobs:
+  tests:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {name: '3.12-dev', python: '3.12-dev', os: ubuntu-latest}
+          - {name: '3.11', python: '3.11', os: ubuntu-latest}
+          - {name: '3.10', python: '3.10', os: ubuntu-latest}
+          - {name: '3.9', python: '3.9', os: ubuntu-latest}
+          - {name: '3.8', python: '3.8', os: ubuntu-latest}
+          - {name: 'PyPy', python: 'pypy-3.10', os: ubuntu-latest}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python }}
+          cache: "pip"
+          cache-dependency-path: "requirements/*.txt"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements/dev.txt
+          pip install -r requirements/test.txt
+
+      - name: Run Tests
+        run: |
+          coverage run -m pytest tests
+          coverage report
+          coverage html
+        
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage-report
+          path: htmlcov

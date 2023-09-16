@@ -1,0 +1,282 @@
+{
+    "id": 12345,
+    "name": "Test Deck",
+    "createdAt": "2023-08-23T22:31:39.567776Z",
+    "updatedAt": "2023-09-04T02:22:43.394183Z",
+    "deckFormat": 3,
+    "description": "{\"ops\":[]}",
+    "featured": "https://storage.googleapis.com/archidekt-card-images/woe/ae9231fd-053d-4b84-a7a8-86063465bc49_art_crop.jpg",
+    "customFeatured": "",
+    "game": null,
+    "private": false,
+    "viewCount": 3,
+    "cards": [
+        {
+            "id": 1462788635,
+            "categories": [
+                "Sorcery"
+            ],
+            "companion": false,
+            "flippedDefault": false,
+            "label": ",#656565",
+            "modifier": "Normal",
+            "quantity": 1,
+            "customCmc": null,
+            "removedCategories": null,
+            "createdAt": "2023-08-23T22:32:45.620445Z",
+            "updatedAt": "2023-08-23T22:32:45.620493Z",
+            "deletedAt": null,
+            "card": {
+                "id": 65311,
+                "artist": "Jiang Zhuqing",
+                "tcgProductId": 433,
+                "ckFoilId": 0,
+                "ckNormalId": 65104,
+                "cmEd": "portal three kingdoms",
+                "collectorNumber": "37",
+                "multiverseid": 10621,
+                "mtgoFoilId": 0,
+                "mtgoNormalId": 0,
+                "uid": "a0f7b8b1-f1dc-46a3-8f4a-c6181e8a049f",
+                "displayName": null,
+                "edition": {
+                    "editioncode": "ptk",
+                    "editionname": "Portal Three Kingdoms",
+                    "editiondate": "1999-05-01",
+                    "editiontype": "starter",
+                    "mtgoCode": null
+                },
+                "flavor": "Using nature to their advantage, wise Three Kingdoms generals often let dammed rivers loose to destroy their enemies.",
+                "games": [],
+                "options": [
+                    "Normal"
+                ],
+                "oracleCard": {
+                    "id": 2064,
+                    "cmc": 1,
+                    "colorIdentity": [
+                        "Blue"
+                    ],
+                    "colors": [
+                        "Blue"
+                    ],
+                    "faces": [],
+                    "layout": "normal",
+                    "legalities": {
+                        "alchemy": "not_legal",
+                        "legacy": "legal",
+                        "oldschool": "not_legal",
+                        "modern": "not_legal",
+                        "vintage": "legal",
+                        "oathbreaker": "legal",
+                        "1v1": "legal",
+                        "historicbrawl": "not_legal",
+                        "premodern": "not_legal",
+                        "historic": "not_legal",
+                        "commander": "legal",
+                        "paupercommander": "legal",
+                        "gladiator": "not_legal",
+                        "explorer": "not_legal",
+                        "brawl": "not_legal",
+                        "penny": "not_legal",
+                        "pioneer": "not_legal",
+                        "duel": "legal",
+                        "pauper": "legal",
+                        "standard": "not_legal",
+                        "future": "not_legal",
+                        "predh": "legal"
+                    },
+                    "manaCost": "{U}",
+                    "manaProduction": {
+                        "W": null,
+                        "U": null,
+                        "B": null,
+                        "R": null,
+                        "G": null,
+                        "C": null
+                    },
+                    "name": "Broken Dam",
+                    "power": "",
+                    "salt": 0.32,
+                    "subTypes": [],
+                    "superTypes": [],
+                    "text": "Tap one or two target creatures without horsemanship.",
+                    "tokens": [],
+                    "toughness": "",
+                    "types": [
+                        "Sorcery"
+                    ],
+                    "loyalty": null,
+                    "defaultCategory": null
+                },
+                "owned": 0,
+                "prices": {
+                    "ck": 5.49,
+                    "ckfoil": 0.0,
+                    "cm": 2.5,
+                    "cmfoil": 0.0,
+                    "mtgo": 0.0,
+                    "mtgofoil": 0.0,
+                    "tcg": 5.93,
+                    "tcgfoil": 0.0
+                },
+                "rarity": "common"
+            }
+        },
+        {
+            "id": 1462788365,
+            "categories": [
+                "Commander"
+            ],
+            "companion": false,
+            "flippedDefault": false,
+            "label": "Have,#37d67a",
+            "modifier": "Normal",
+            "quantity": 1,
+            "customCmc": null,
+            "removedCategories": null,
+            "createdAt": "2023-08-23T22:32:18.118305Z",
+            "updatedAt": "2023-09-03T16:27:36.290285Z",
+            "deletedAt": null,
+            "card": {
+                "id": 122970,
+                "artist": "Ekaterina Burmak",
+                "tcgProductId": 512193,
+                "ckFoilId": 282308,
+                "ckNormalId": 281587,
+                "cmEd": "wilds of eldraine",
+                "collectorNumber": "206",
+                "multiverseid": 0,
+                "mtgoFoilId": 0,
+                "mtgoNormalId": 0,
+                "uid": "ae9231fd-053d-4b84-a7a8-86063465bc49",
+                "displayName": null,
+                "edition": {
+                    "editioncode": "woe",
+                    "editionname": "Wilds of Eldraine",
+                    "editiondate": "2023-09-08",
+                    "editiontype": "expansion",
+                    "mtgoCode": "woe"
+                },
+                "flavor": "",
+                "games": [],
+                "options": [
+                    "Normal",
+                    "Foil"
+                ],
+                "oracleCard": {
+                    "id": 35949,
+                    "cmc": 4,
+                    "colorIdentity": [
+                        "White",
+                        "Blue"
+                    ],
+                    "colors": [
+                        "White",
+                        "Blue"
+                    ],
+                    "faces": [],
+                    "layout": "normal",
+                    "legalities": {
+                        "alchemy": "legal",
+                        "legacy": "legal",
+                        "oldschool": "not_legal",
+                        "modern": "legal",
+                        "vintage": "legal",
+                        "oathbreaker": "legal",
+                        "1v1": "legal",
+                        "historicbrawl": "legal",
+                        "premodern": "not_legal",
+                        "historic": "legal",
+                        "commander": "legal",
+                        "paupercommander": "not_legal",
+                        "gladiator": "legal",
+                        "explorer": "legal",
+                        "brawl": "legal",
+                        "penny": "not_legal",
+                        "pioneer": "legal",
+                        "duel": "legal",
+                        "pauper": "not_legal",
+                        "standard": "legal",
+                        "future": "legal",
+                        "predh": "not_legal"
+                    },
+                    "manaCost": "{2}{W}{U}",
+                    "manaProduction": {
+                        "W": null,
+                        "U": null,
+                        "B": null,
+                        "R": null,
+                        "G": null,
+                        "C": null
+                    },
+                    "name": "Hylda of the Icy Crown",
+                    "power": "3",
+                    "salt": null,
+                    "subTypes": [
+                        "Human",
+                        "Warlock"
+                    ],
+                    "superTypes": [
+                        "Legendary"
+                    ],
+                    "text": "Whenever you tap an untapped creature an opponent controls, you may pay {1}. When you do, choose one —\n• Create a 4/4 white and blue Elemental creature token.\n• Put a +1/+1 counter on each creature you control.\n• Scry 2, then draw a card.",
+                    "tokens": [
+                        "36804"
+                    ],
+                    "toughness": "4",
+                    "types": [
+                        "Creature"
+                    ],
+                    "loyalty": null,
+                    "defaultCategory": null
+                },
+                "owned": 0,
+                "prices": {
+                    "ck": 0.99,
+                    "ckfoil": 2.49,
+                    "cm": 0.0,
+                    "cmfoil": 0.0,
+                    "mtgo": 0.0,
+                    "mtgofoil": 0.0,
+                    "tcg": 1.04,
+                    "tcgfoil": 4.45
+                },
+                "rarity": "mythic"
+            }
+        }
+    ],
+    "points": 0,
+    "userInput": 0,
+    "owner": {
+        "id": 98649,
+        "username": "NorwegianWhaler",
+        "avatar": "https://storage.googleapis.com/topdekt-user/avatars/default/avatar_colorless.svg",
+        "frame": null,
+        "ckAffiliate": "",
+        "tcgAffiliate": "",
+        "referrerEnum": null
+    },
+    "categories": [
+        {
+            "id": 45896363,
+            "name": "Sorcery",
+            "includedInDeck": true,
+            "includedInPrice": true,
+            "isPremier": false
+        },
+        {
+            "id": 45896340,
+            "name": "Commander",
+            "includedInDeck": true,
+            "includedInPrice": true,
+            "isPremier": true
+        }
+    ],
+    "commentRoot": 5223305,
+    "editors": [],
+    "parentFolder": 139452,
+    "bookmarked": false,
+    "deckTags": [],
+    "cardPackage": null
+}
