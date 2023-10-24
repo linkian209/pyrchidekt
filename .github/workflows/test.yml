@@ -18,7 +18,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - {name: '3.12-dev', python: '3.12-dev', os: ubuntu-latest}
+          - {name: '3.13-dev', python: '3.13-dev', os: ubuntu-latest}
+          - {name: '3.12', python: '3.12', os: ubuntu-latest}
           - {name: '3.11', python: '3.11', os: ubuntu-latest}
     steps:
       - name: Checkout
