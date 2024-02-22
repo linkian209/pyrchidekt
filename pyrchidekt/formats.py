@@ -46,6 +46,7 @@ class LegalFormat(Enum):
     STANDARD = 20
     FUTURE = 21
     PREDH = 22
+    TIMELESS = 23
 
     @staticmethod
     def fromString(input: str) -> LegalFormat:
@@ -94,5 +95,7 @@ class LegalFormat(Enum):
                 return LegalFormat.FUTURE
             case "predh":
                 return LegalFormat.PREDH
+            case "timeless":
+                return LegalFormat.TIMELESS
             case _:
                 raise TypeError("Not a legal format")
