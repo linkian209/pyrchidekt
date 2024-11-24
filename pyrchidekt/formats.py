@@ -22,6 +22,7 @@ class Format(Enum):
     ONE_V_ONE_COMMANDER = 11
     DUAL_COMMANDER = 12
     BRAWL = 13
+    OATHBREAKER = 14
 
 class LegalFormat(Enum):
     ALCHEMY = 1
