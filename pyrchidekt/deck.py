@@ -155,7 +155,7 @@ class Deck:
 
         for card in retval.cards:
             added_to_categories = False
-            if len(card.categories):
+            if card.categories and len(card.categories):
                 for category in card.categories:
                     deck_category = categories.get(category)
                     if(deck_category is None):
