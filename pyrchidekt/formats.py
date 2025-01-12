@@ -25,6 +25,10 @@ class Format(Enum):
     OATHBREAKER = 14
 
 class LegalFormat(Enum):
+    """Enumerated wrapper around the legalities strings
+
+    This class is a wrapper around the card legalities format strings Archidekt uses
+    """
     ALCHEMY = 1
     LEGACY = 2
     OLD_SCHOOL = 3
@@ -48,6 +52,7 @@ class LegalFormat(Enum):
     FUTURE = 21
     PREDH = 22
     TIMELESS = 23
+    CANADIAN_HIGHLANDER = 24
 
     @staticmethod
     def fromString(input: str) -> LegalFormat:
@@ -98,5 +103,7 @@ class LegalFormat(Enum):
                 return LegalFormat.PREDH
             case "timeless":
                 return LegalFormat.TIMELESS
+            case "canlander":
+                return LegalFormat.CANADIAN_HIGHLANDER
             case _:
                 raise TypeError("Not a legal format")
