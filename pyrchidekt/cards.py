@@ -173,7 +173,7 @@ class OracleCard:
             colors=data["colors"],
             faces=data["faces"],
             layout=data["layout"],
-            legalities={LegalFormat.fromString(x): data["legalities"][x] for x in data["legalities"]},
+            legalities={LegalFormat(x.lower()): data["legalities"][x] for x in data["legalities"]},
             mana_cost=data["manaCost"],
             mana_production=ManaProduction.fromJson(data["manaProduction"]),
             name=data["name"],

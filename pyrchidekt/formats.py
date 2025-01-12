@@ -2,9 +2,9 @@
 Enum for deck formats
 """
 from __future__ import annotations
-from enum import Enum
+from enum import IntEnum, StrEnum
 
-class Format(Enum):
+class Format(IntEnum):
     """Enumerated wrapper around the format code
     
     This class is a wrapper around the deck format codes Archidekt uses
@@ -24,86 +24,32 @@ class Format(Enum):
     BRAWL = 13
     OATHBREAKER = 14
 
-class LegalFormat(Enum):
+class LegalFormat(StrEnum):
     """Enumerated wrapper around the legalities strings
 
     This class is a wrapper around the card legalities format strings Archidekt uses
     """
-    ALCHEMY = 1
-    LEGACY = 2
-    OLD_SCHOOL = 3
-    MODERN = 4
-    VINTAGE = 5
-    OATHBREAKER = 6
-    ONE_V_ONE = 7
-    HISTORIC_BRAWL = 8
-    PREMODERN = 9
-    HISTORIC = 10
-    COMMANDER = 11
-    PAUPER_COMMANDER = 12
-    GLADIATOR = 13
-    EXPLORER = 14
-    BRAWL = 15
-    PENNY = 16
-    PIONEER = 17
-    DUEL = 18
-    PAUPER = 19
-    STANDARD = 20
-    FUTURE = 21
-    PREDH = 22
-    TIMELESS = 23
-    CANADIAN_HIGHLANDER = 24
-
-    @staticmethod
-    def fromString(input: str) -> LegalFormat:
-        match input:
-            case "alchemy":
-                return LegalFormat.ALCHEMY
-            case "legacy":
-                return LegalFormat.LEGACY
-            case "oldschool":
-                return LegalFormat.OLD_SCHOOL
-            case "modern":
-                return LegalFormat.MODERN
-            case "vintage":
-                return LegalFormat.VINTAGE
-            case "oathbreaker":
-                return LegalFormat.OATHBREAKER
-            case "1v1":
-                return LegalFormat.ONE_V_ONE
-            case "historicbrawl":
-                return LegalFormat.HISTORIC_BRAWL
-            case "premodern":
-                return LegalFormat.PREMODERN
-            case "historic": 
-                return LegalFormat.HISTORIC
-            case "commander": 
-                return LegalFormat.COMMANDER
-            case "paupercommander":
-                return LegalFormat.PAUPER_COMMANDER
-            case "gladiator":
-                return LegalFormat.GLADIATOR
-            case "explorer":
-                return LegalFormat.EXPLORER
-            case "brawl":
-                return LegalFormat.BRAWL
-            case "penny":
-                return LegalFormat.PENNY
-            case "pioneer":
-                return LegalFormat.PIONEER
-            case "duel":
-                return LegalFormat.DUEL
-            case "pauper": 
-                return LegalFormat.PAUPER
-            case "standard": 
-                return LegalFormat.STANDARD
-            case "future": 
-                return LegalFormat.FUTURE
-            case "predh":
-                return LegalFormat.PREDH
-            case "timeless":
-                return LegalFormat.TIMELESS
-            case "canlander":
-                return LegalFormat.CANADIAN_HIGHLANDER
-            case _:
-                raise TypeError("Not a legal format")
+    ALCHEMY = "alchemy"
+    LEGACY = "legacy"
+    OLD_SCHOOL = "oldschool"
+    MODERN = "modern"
+    VINTAGE = "vintage"
+    OATHBREAKER = "oathbreaker"
+    ONE_V_ONE = "1v1"
+    HISTORIC_BRAWL = "historicbrawl"
+    PREMODERN = "premodern"
+    HISTORIC = "historic"
+    COMMANDER = "commander"
+    PAUPER_COMMANDER = "paupercommander"
+    GLADIATOR = "gladiator"
+    EXPLORER = "explorer"
+    BRAWL = "brawl"
+    PENNY = "penny"
+    PIONEER = "pioneer"
+    DUEL = "duel"
+    PAUPER = "pauper"
+    STANDARD = "standard"
+    FUTURE = "future"
+    PREDH = "predh"
+    TIMELESS = "timeless"
+    CANADIAN_HIGHLANDER = "canlander"
