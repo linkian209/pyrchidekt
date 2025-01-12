@@ -9,6 +9,7 @@ from .owner import Owner
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Any, List
+from warnings import warn
 
 @dataclass
 class Deck:
@@ -126,12 +127,24 @@ class Deck:
         Returns:
             The `Deck` object
         """
+        try:
+            _format = Format(data["deckFormat"])
+        except ValueError as e:
+            warn(
+                message=f"{e} -> skipping deck format\n"
+                f"For new formats, please file an issue at "
+                f"https://github.com/linkian209/pyrchidekt/issues",
+                category=RuntimeWarning,
+                stacklevel=2,
+            )
+            _format = None
+
         retval = Deck(
             id=data["id"],
             name=data["name"],
             created_at=datetime.fromisoformat(data["createdAt"]),
             updated_at=datetime.fromisoformat(data["updatedAt"]),
-            format=Format(data["deckFormat"]),
+            format=_format,
             description=data["description"],
             featured=data["featured"],
             custom_featured=data["customFeatured"],
