@@ -9,6 +9,7 @@ from .mana import ManaProduction
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Any, Dict, List
+from warnings import warn
 
 
 @dataclass
@@ -166,6 +167,13 @@ class OracleCard:
         Returns:
             The `OracleCard` object created from the data.
         """
+        legalities = dict()
+        for x in data["legalities"]:
+            try:
+                legalities[LegalFormat(x.lower())] = data["legalities"][x]
+            except ValueError as e:
+                warn(f"{e} -> skipping card legality", RuntimeWarning)
+
         return OracleCard(
             id=data["id"],
             cmc=data["cmc"],
@@ -173,7 +181,7 @@ class OracleCard:
             colors=data["colors"],
             faces=data["faces"],
             layout=data["layout"],
-            legalities={LegalFormat.fromString(x): data["legalities"][x] for x in data["legalities"]},
+            legalities=legalities,
             mana_cost=data["manaCost"],
             mana_production=ManaProduction.fromJson(data["manaProduction"]),
             name=data["name"],
