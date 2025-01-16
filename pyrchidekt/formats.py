@@ -1,14 +1,17 @@
 """
 Enum for deck formats
 """
+
 from __future__ import annotations
 from enum import IntEnum, StrEnum
 
+
 class Format(IntEnum):
     """Enumerated wrapper around the format code
-    
+
     This class is a wrapper around the deck format codes Archidekt uses
     """
+
     STANDARD = 1
     MODERN = 2
     COMMANDER = 3
@@ -35,11 +38,13 @@ class Format(IntEnum):
     TIMELESS = 24
     CANADIAN_HIGHLANDER = 25
 
+
 class LegalFormat(StrEnum):
     """Enumerated wrapper around the legalities strings
 
     This class is a wrapper around the card legalities format strings Archidekt uses
     """
+
     STANDARD = "standard"
     MODERN = "modern"
     COMMANDER = "commander"

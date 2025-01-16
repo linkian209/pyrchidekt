@@ -1,7 +1,8 @@
 """
 Card Classes. There are three: one for the archidekt wrapping, one containing artist and set info, and the one
-that contains all of the actual card info.
+that contains all the actual card info.
 """
+
 from __future__ import annotations
 from .edition import Edition
 from .formats import LegalFormat
@@ -16,7 +17,7 @@ from warnings import warn
 class OracleCard:
     """Actual Card Representation
 
-    This class is the inner most layer of the onion containing the actual card information. This information
+    This class is the innermost layer of the onion containing the actual card information. This information
     likely comes from Scryfall.
 
     Attributes:
@@ -28,25 +29,25 @@ class OracleCard:
 
         colors: `List[str]` Colors of the card as a list of strings
 
-        faces: `List` A list of the faces of the card. (for dual sided cards)
+        faces: `List` A list of the faces of the card. (for dual-sided cards)
 
         layout: `str` The layout of the card
 
-        legalities: `Dict[LegalFormat, bool]` The formats in which the card is legal to play. This is a dictionary 
+        legalities: `Dict[LegalFormat, bool]` The formats in which the card is legal to play. This is a dictionary
         with an Enum representation of all formats and a boolean if it is legal in that format.
-        
-        mana_cost: `str` The raw mana cost string. Uses special characters to represent the colors for example: 
+
+        mana_cost: `str` The raw mana cost string. Uses special characters to represent the colors for example:
         "1{U}" is 1 generic and 1 blue mana
-        
+
         mana_production: `ManaProduction` The mana this card produces.
-        
+
         name: `str` The name of the card
 
         power: `str` The power of the card as a string. This is because some powers are not integers (i.e. "*")
 
         salt: `str` The salt rating of the card (how salty do people feel when playing against it)
 
-        sub_types: `List[str]` The sub types of a card (ex. ["Goblin", "Lord"])
+        sub_types: `List[str]` The subtypes of a card (ex. ["Goblin", "Lord"])
 
         super_types: `List[str]` The super types of a card
 
@@ -54,8 +55,7 @@ class OracleCard:
 
         tokens: `List[str]` A list of IDs of tokens this card creates
 
-        toughness: `str`  Toughness of a creature as a string. This is because some toughnesses are not 
-        integers
+        toughness: `str`  Toughness of a creature as a string. This is because some toughness are not integers
 
         types: `List[str]` Types of the card (ex: ["Enchantment", "Creature"])
 
@@ -63,6 +63,7 @@ class OracleCard:
 
         default_category: `str` The default category a card would go in if it is not already in one
     """
+
     id: int = field(default=-1)
     cmc: int = field(default=-1)
     color_identity: List[str] = field(default=list)
@@ -200,15 +201,15 @@ class OracleCard:
             toughness=data["toughness"],
             types=data["types"],
             loyalty=data["loyalty"],
-            default_category=data["defaultCategory"]
+            default_category=data["defaultCategory"],
         )
 
 
 @dataclass
 class Card:
     """The inner card representation
-    
-    This class represents the inner layer from the Archidekt wrapper, containing meta information not 
+
+    This class represents the inner layer from the Archidekt wrapper, containing meta information not
     relevant to actually playing the game.
 
     Attributes:
@@ -217,7 +218,7 @@ class Card:
         artist: `str` The artist of the card
 
         tcg_product_id: `int` The ID of the card on TCG Player
-        
+
         ck_foil_id: `int` The ID of the foil card on Card Kingdon
 
         ck_normal_id: `int` The ID of the card on Card Kingdom
@@ -235,7 +236,7 @@ class Card:
         uid: `str` A UUID for the card on Scryfall
 
         display_name: `Any` A display name for the card
-        
+
         edition: `Edition` The edition information of the card
 
         flavor: `str` The flavor text of the card
@@ -248,10 +249,11 @@ class Card:
 
         owned: `int` How many copies are owned by the creator of the deck
 
-        prices: `Dict[str, float]` A list of market prices by vender for the card at the time of querying
+        prices: `Dict[str, float]` A list of market prices by vendor for the card at the time of querying
 
         rarity: `str` Rarity of the card
     """
+
     id: int
     artist: str
     tcg_product_id: int
@@ -276,8 +278,8 @@ class Card:
     @staticmethod
     def fromJson(data: dict) -> Card:
         """Returns a `Card` from a dictionary
-        
-        Used in `Deck` creation, this method returns a `Card` from a JSON serialized object. An example of 
+
+        Used in `Deck` creation, this method returns a `Card` from a JSON serialized object. An example of
         this is as follows:
         ```json
         {
@@ -348,16 +350,16 @@ class Card:
             oracle_card=OracleCard.fromJson(data["oracleCard"]),
             owned=data["owned"],
             prices=data["prices"],
-            rarity=data["rarity"]
+            rarity=data["rarity"],
         )
 
 
 @dataclass
 class ArchidektCard:
     """The Archidekt Wrapper for a card
-    
-    This class is the outer most wrapper around a card, containing information relevant for Archidekt's front end.
-    This wraps around the two inner layers as this instance is created every time a version of the card is added 
+
+    This class is the outermost wrapper around a card, containing information relevant for Archidekt's front end.
+    This wraps around the two inner layers as this instance is created every time a version of the card is added
     into a deck.
 
     Attributes:
@@ -389,6 +391,7 @@ class ArchidektCard:
 
         deleted_at: `datetime | None` When this instance was deleted from the deck
     """
+
     id: int
     card: Card
     categories: List[str]
@@ -407,7 +410,7 @@ class ArchidektCard:
     @staticmethod
     def fromJson(data: dict) -> ArchidektCard:
         """Returns an `ArchidektCard` from a dictionary
-        
+
         Used in `Deck` creation, this takes in a JSON deserialized dictionary and returns the `ArchidektCard`
         it represents. An example of this is as follows:
         ```json
@@ -465,5 +468,7 @@ class ArchidektCard:
             removed_categories=data["removedCategories"],
             created_at=datetime.fromisoformat(data["createdAt"]),
             updated_at=datetime.fromisoformat(data["updatedAt"]),
-            deleted_at=datetime.fromisoformat(data["deletedAt"]) if data["deletedAt"] else None
+            deleted_at=(
+                datetime.fromisoformat(data["deletedAt"]) if data["deletedAt"] else None
+            ),
         )
