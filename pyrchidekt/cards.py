@@ -126,8 +126,8 @@ class OracleCard:
                 "standard": "legal",
                 "future": "legal",
                 "predh": "not_legal",
-                "future": "timeless",
-                "future": "canlander"
+                "timeless": "legal",
+                "canlander": "legal"
             },
             "manaCost": "{2}{W}{U}",
             "manaProduction": {
