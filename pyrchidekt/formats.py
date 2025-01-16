@@ -23,6 +23,17 @@ class Format(IntEnum):
     DUAL_COMMANDER = 12
     BRAWL = 13
     OATHBREAKER = 14
+    PIONEER = 15
+    HISTORIC = 16
+    PAUPER_EDH = 17
+    ALCHEMY = 18
+    EXPLORER = 19
+    HISTORIC_BRAWL = 20
+    GLADIATOR = 21
+    PREMODERN = 22
+    PREDH = 23
+    TIMELESS = 24
+    CANADIAN_HIGHLANDER = 25
 
 class LegalFormat(StrEnum):
     """Enumerated wrapper around the legalities strings
