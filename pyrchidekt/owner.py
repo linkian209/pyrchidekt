@@ -1,6 +1,7 @@
 """
 Loose wrapping around deck owner. No PII other than a username and id.
 """
+
 from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
@@ -9,11 +10,11 @@ from typing import Any
 @dataclass
 class Owner:
     """Owner Wrapper
-    
+
     This is a loose wrapping around the owner of a deck.
 
     Attributes:
-        id: `int` The owners's ID
+        id: `int` The owner's ID
 
         username: `str` The owner's username
 
@@ -27,6 +28,7 @@ class Owner:
 
         referrer_enum: `Any` The referrer enumeration
     """
+
     id: int
     username: str
     avatar: str
@@ -38,8 +40,8 @@ class Owner:
     @staticmethod
     def fromJson(data: dict) -> Owner:
         """Creates an `Owner` from a dict
-        
-        This method creates an `Owner` object from a JSON deserialized `dict`. An example of this is is as
+
+        This method creates an `Owner` object from a JSON deserialized `dict`. An example of this is as
         follows:
         ```json
         {
@@ -66,5 +68,5 @@ class Owner:
             frame=data["frame"],
             ck_affiliate=data["ckAffiliate"],
             tcg_affiliate=data["tcgAffiliate"],
-            referrer_enum=data["referrerEnum"]
+            referrer_enum=data["referrerEnum"],
         )

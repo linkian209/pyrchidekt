@@ -1,11 +1,13 @@
 """
 This is the api querying that will return decks based on ID
 """
+
 from .deck import Deck
 import requests
 
 ARCHIDEKT_API_BASE = "https://www.archidekt.com/api/"
 DECK_SEARCH_ENDPOINT = ARCHIDEKT_API_BASE + "decks/{}/"
+
 
 def getDeckById(id: int) -> Deck:
     """Retrieves a deck by id from Archidekt
@@ -16,7 +18,7 @@ def getDeckById(id: int) -> Deck:
         id: `int` The ID of the deck
 
     Returns:
-        The `Deck` object. 
+        The `Deck` object.
 
     Raises:
         RuntimeError: In either the case that the deck doesn't exist or it can't be retrieved for some reason

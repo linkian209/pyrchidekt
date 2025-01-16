@@ -1,109 +1,71 @@
 """
 Enum for deck formats
 """
-from __future__ import annotations
-from enum import Enum
 
-class Format(Enum):
+from __future__ import annotations
+from enum import IntEnum, StrEnum
+
+
+class Format(IntEnum):
     """Enumerated wrapper around the format code
-    
+
     This class is a wrapper around the deck format codes Archidekt uses
     """
+
     STANDARD = 1
     MODERN = 2
-    COMMANDER_EDH = 3
+    COMMANDER = 3
     LEGACY = 4
     VINTAGE = 5
     PAUPER = 6
     CUSTOM = 7
     FRONTIER = 8
     FUTURE_STANDARD = 9
-    PENNY_DREADFUL = 10
+    PENNY = 10
     ONE_V_ONE_COMMANDER = 11
-    DUAL_COMMANDER = 12
+    DUEL_COMMANDER = 12
     BRAWL = 13
     OATHBREAKER = 14
+    PIONEER = 15
+    HISTORIC = 16
+    PAUPER_COMMANDER = 17
+    ALCHEMY = 18
+    EXPLORER = 19
+    HISTORIC_BRAWL = 20
+    GLADIATOR = 21
+    PREMODERN = 22
+    PREDH = 23
+    TIMELESS = 24
+    CANADIAN_HIGHLANDER = 25
 
-class LegalFormat(Enum):
+
+class LegalFormat(StrEnum):
     """Enumerated wrapper around the legalities strings
 
     This class is a wrapper around the card legalities format strings Archidekt uses
     """
-    ALCHEMY = 1
-    LEGACY = 2
-    OLD_SCHOOL = 3
-    MODERN = 4
-    VINTAGE = 5
-    OATHBREAKER = 6
-    ONE_V_ONE = 7
-    HISTORIC_BRAWL = 8
-    PREMODERN = 9
-    HISTORIC = 10
-    COMMANDER = 11
-    PAUPER_COMMANDER = 12
-    GLADIATOR = 13
-    EXPLORER = 14
-    BRAWL = 15
-    PENNY = 16
-    PIONEER = 17
-    DUEL = 18
-    PAUPER = 19
-    STANDARD = 20
-    FUTURE = 21
-    PREDH = 22
-    TIMELESS = 23
-    CANADIAN_HIGHLANDER = 24
 
-    @staticmethod
-    def fromString(input: str) -> LegalFormat:
-        match input:
-            case "alchemy":
-                return LegalFormat.ALCHEMY
-            case "legacy":
-                return LegalFormat.LEGACY
-            case "oldschool":
-                return LegalFormat.OLD_SCHOOL
-            case "modern":
-                return LegalFormat.MODERN
-            case "vintage":
-                return LegalFormat.VINTAGE
-            case "oathbreaker":
-                return LegalFormat.OATHBREAKER
-            case "1v1":
-                return LegalFormat.ONE_V_ONE
-            case "historicbrawl":
-                return LegalFormat.HISTORIC_BRAWL
-            case "premodern":
-                return LegalFormat.PREMODERN
-            case "historic": 
-                return LegalFormat.HISTORIC
-            case "commander": 
-                return LegalFormat.COMMANDER
-            case "paupercommander":
-                return LegalFormat.PAUPER_COMMANDER
-            case "gladiator":
-                return LegalFormat.GLADIATOR
-            case "explorer":
-                return LegalFormat.EXPLORER
-            case "brawl":
-                return LegalFormat.BRAWL
-            case "penny":
-                return LegalFormat.PENNY
-            case "pioneer":
-                return LegalFormat.PIONEER
-            case "duel":
-                return LegalFormat.DUEL
-            case "pauper": 
-                return LegalFormat.PAUPER
-            case "standard": 
-                return LegalFormat.STANDARD
-            case "future": 
-                return LegalFormat.FUTURE
-            case "predh":
-                return LegalFormat.PREDH
-            case "timeless":
-                return LegalFormat.TIMELESS
-            case "canlander":
-                return LegalFormat.CANADIAN_HIGHLANDER
-            case _:
-                raise TypeError("Not a legal format")
+    STANDARD = "standard"
+    MODERN = "modern"
+    COMMANDER = "commander"
+    LEGACY = "legacy"
+    VINTAGE = "vintage"
+    PAUPER = "pauper"
+    FRONTIER = "oldschool"
+    FUTURE_STANDARD = "future"
+    PENNY = "penny"
+    ONE_V_ONE_COMMANDER = "1v1"
+    DUEL_COMMANDER = "duel"
+    BRAWL = "brawl"
+    OATHBREAKER = "oathbreaker"
+    PIONEER = "pioneer"
+    HISTORIC = "historic"
+    PAUPER_COMMANDER = "paupercommander"
+    ALCHEMY = "alchemy"
+    EXPLORER = "explorer"
+    HISTORIC_BRAWL = "historicbrawl"
+    GLADIATOR = "gladiator"
+    PREMODERN = "premodern"
+    PREDH = "predh"
+    TIMELESS = "timeless"
+    CANADIAN_HIGHLANDER = "canlander"
