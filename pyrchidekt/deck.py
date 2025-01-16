@@ -1,8 +1,9 @@
 """
 Loose Wrapper around Archidekt's Deck object
 """
+
 from __future__ import annotations
-from .cards import ArchidektCard, Card
+from .cards import ArchidektCard
 from .categories import Category
 from .formats import Format
 from .owner import Owner
@@ -11,11 +12,12 @@ from datetime import datetime
 from typing import Any, List
 from warnings import warn
 
+
 @dataclass
 class Deck:
     """The Deck object
-    
-    This is the main object from this module. It contains all of the information about a deck. 
+
+    This is the main object from this module. It contains all the information about a deck.
 
     Attributes:
         id: `int` The deck id
@@ -23,7 +25,7 @@ class Deck:
         name: `str` Name of the deck
 
         created_at: `datetime` When the deck was created
-        
+
         updated_at: `datetime` When the deck was last updated
 
         format: `Format` What format the deck is listed as in Archidekt
@@ -45,9 +47,9 @@ class Deck:
         points: `int` The points for the deck
 
         user_input: `int` Amount of user input
-        
+
         owner: `Owner` Owner of the deck
-        
+
         categories: `List[Category]` The categories in the deck
 
         comment_root: `int` The ID of the comment at the head of the chain
@@ -57,11 +59,12 @@ class Deck:
         parent_folder: `int` The ID of the folder the deck is in
 
         bookmarked: `bool` Is the deck bookmarked?
-        
+
         deck_tags: `List[str]` Tags for the deck
-        
+
         card_package: `Any` The package for the deck.
     """
+
     id: int
     name: str
     created_at: datetime
@@ -88,7 +91,7 @@ class Deck:
     @staticmethod
     def fromJson(data: dict) -> Deck:
         """Creates a `Deck` from a `dict`
-        
+
         This method creates `Deck` from a JSON deserialized `dict`.
 
         An example of a deck is as follows:
@@ -119,7 +122,7 @@ class Deck:
         }
         ```
 
-        This method will loop through all of the lists and create objects from them as well.
+        This method will loop through all the lists and create objects from them as well.
 
         Arguments:
             data: `dict` The deck data
@@ -161,7 +164,7 @@ class Deck:
             parent_folder=data["parentFolder"],
             bookmarked=data["bookmarked"],
             deck_tags=data["deckTags"],
-            card_package=data["cardPackage"]
+            card_package=data["cardPackage"],
         )
 
         categories = {x.name: x for x in retval.categories}
@@ -171,7 +174,7 @@ class Deck:
             if card.categories and len(card.categories):
                 for category in card.categories:
                     deck_category = categories.get(category)
-                    if(deck_category is None):
+                    if deck_category is None:
                         deck_category = Category(name=category)
                         categories[deck_category.name] = deck_category
                         retval.categories.append(deck_category)
@@ -180,10 +183,12 @@ class Deck:
 
             if not added_to_categories and card.card.oracle_card.default_category:
                 deck_category = categories.get(card.card.oracle_card.default_category)
-                if(deck_category is None):
-                    deck_category = Category(name=card.card.oracle_card.default_category)
+                if deck_category is None:
+                    deck_category = Category(
+                        name=card.card.oracle_card.default_category
+                    )
                     categories[deck_category.name] = deck_category
                     retval.categories.append(deck_category)
                 deck_category.cards.append(card)
-        
+
         return retval
