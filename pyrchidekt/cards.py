@@ -172,7 +172,7 @@ class OracleCard:
         for x in data["legalities"]:
             try:
                 legalities[LegalFormat(x.lower())] = data["legalities"][x]
-            except ValueError as e:
+            except (TypeError, ValueError) as e:
                 warn(
                     message=f"{e} -> skipping card legality\n"
                     f"For new formats, please file an issue at "
