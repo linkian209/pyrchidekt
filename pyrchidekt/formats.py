@@ -3,69 +3,46 @@ Enum for deck formats
 """
 
 from __future__ import annotations
-from enum import IntEnum, StrEnum
+from aenum import Enum
 
 
-class Format(IntEnum):
-    """Enumerated wrapper around the format code
+class Format(Enum):
+    """Enumerated wrapper around the format code and legalities strings
 
-    This class is a wrapper around the deck format codes Archidekt uses
+    This class combines both the numeric format codes and string legality codes that Archidekt uses
     """
+    _init_ = 'value string'
+    STANDARD = 1, "standard"
+    MODERN = 2, "modern"
+    COMMANDER = 3, "commander"
+    LEGACY = 4, "legacy"
+    VINTAGE = 5, "vintage"
+    PAUPER = 6, "pauper"
+    CUSTOM = 7, None
+    FRONTIER = 8, "oldschool"
+    FUTURE_STANDARD = 9, "future"
+    PENNY = 10, "penny"
+    ONE_V_ONE_COMMANDER = 11, "1v1"
+    DUEL_COMMANDER = 12, "duel"
+    BRAWL = 13, "brawl"
+    OATHBREAKER = 14, "oathbreaker"
+    PIONEER = 15, "pioneer"
+    HISTORIC = 16, "historic"
+    PAUPER_COMMANDER = 17, "paupercommander"
+    ALCHEMY = 18, "alchemy"
+    EXPLORER = 19, "explorer"
+    HISTORIC_BRAWL = 20, "historicbrawl"
+    GLADIATOR = 21, "gladiator"
+    PREMODERN = 22, "premodern"
+    PREDH = 23, "predh"
+    TIMELESS = 24, "timeless"
+    CANADIAN_HIGHLANDER = 25, "canlander"
 
-    STANDARD = 1
-    MODERN = 2
-    COMMANDER = 3
-    LEGACY = 4
-    VINTAGE = 5
-    PAUPER = 6
-    CUSTOM = 7
-    FRONTIER = 8
-    FUTURE_STANDARD = 9
-    PENNY = 10
-    ONE_V_ONE_COMMANDER = 11
-    DUEL_COMMANDER = 12
-    BRAWL = 13
-    OATHBREAKER = 14
-    PIONEER = 15
-    HISTORIC = 16
-    PAUPER_COMMANDER = 17
-    ALCHEMY = 18
-    EXPLORER = 19
-    HISTORIC_BRAWL = 20
-    GLADIATOR = 21
-    PREMODERN = 22
-    PREDH = 23
-    TIMELESS = 24
-    CANADIAN_HIGHLANDER = 25
-
-
-class LegalFormat(StrEnum):
-    """Enumerated wrapper around the legalities strings
-
-    This class is a wrapper around the card legalities format strings Archidekt uses
-    """
-
-    STANDARD = "standard"
-    MODERN = "modern"
-    COMMANDER = "commander"
-    LEGACY = "legacy"
-    VINTAGE = "vintage"
-    PAUPER = "pauper"
-    FRONTIER = "oldschool"
-    FUTURE_STANDARD = "future"
-    PENNY = "penny"
-    ONE_V_ONE_COMMANDER = "1v1"
-    DUEL_COMMANDER = "duel"
-    BRAWL = "brawl"
-    OATHBREAKER = "oathbreaker"
-    PIONEER = "pioneer"
-    HISTORIC = "historic"
-    PAUPER_COMMANDER = "paupercommander"
-    ALCHEMY = "alchemy"
-    EXPLORER = "explorer"
-    HISTORIC_BRAWL = "historicbrawl"
-    GLADIATOR = "gladiator"
-    PREMODERN = "premodern"
-    PREDH = "predh"
-    TIMELESS = "timeless"
-    CANADIAN_HIGHLANDER = "canlander"
+    def __str__(self: Format) -> str:
+        return self.string 
+    
+    @classmethod
+    def _missing_value_(cls, value):
+        for member in cls:
+            if member.string == value:
+                return member

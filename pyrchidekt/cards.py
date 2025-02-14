@@ -5,7 +5,7 @@ that contains all the actual card info.
 
 from __future__ import annotations
 from .edition import Edition
-from .formats import LegalFormat
+from .formats import Format
 from .mana import ManaProduction
 from dataclasses import dataclass, field
 from datetime import datetime
@@ -33,7 +33,7 @@ class OracleCard:
 
         layout: `str` The layout of the card
 
-        legalities: `Dict[LegalFormat, bool]` The formats in which the card is legal to play. This is a dictionary
+        legalities: `Dict[Format, bool]` The formats in which the card is legal to play. This is a dictionary
         with an Enum representation of all formats and a boolean if it is legal in that format.
 
         mana_cost: `str` The raw mana cost string. Uses special characters to represent the colors for example:
@@ -70,7 +70,7 @@ class OracleCard:
     colors: List[str] = field(default=list)
     faces: List = field(default=list)
     layout: str = field(default="")
-    legalities: Dict[LegalFormat, bool] = field(default=dict)
+    legalities: Dict[Format, bool] = field(default=dict)
     mana_cost: str = field(default="")
     mana_production: ManaProduction = field(default=ManaProduction)
     name: str = field(default="")
@@ -171,7 +171,7 @@ class OracleCard:
         legalities = dict()
         for x in data["legalities"]:
             try:
-                legalities[LegalFormat(x.lower())] = data["legalities"][x]
+                legalities[Format(x.lower())] = data["legalities"][x]
             except ValueError as e:
                 warn(
                     message=f"{e} -> skipping card legality\n"
