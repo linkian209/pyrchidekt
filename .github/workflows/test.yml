@@ -44,8 +44,8 @@ jobs:
           coverage report
           coverage html
         
-      - name: Upload Test Results
-        uses: actions/upload-artifact@v3
+      - name: Upload Test Results 
+        uses: actions/upload-artifact@v4
         with:
-          name: code-coverage-report
+          name: code-coverage-report-${{ matrix.name }}
           path: htmlcov
