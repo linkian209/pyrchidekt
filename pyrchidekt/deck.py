@@ -102,23 +102,23 @@ class Deck:
             "createdAt": "2023-08-23T22:31:39.567776Z",
             "updatedAt": "2023-09-04T02:22:43.394183Z",
             "deckFormat": 3,
+            "game": 1,
             "description": "{\"ops\":[]}",
+            "viewCount": 1000,
             "featured": "https://storage.googleapis.com/archidekt-card-images/woe/ae9231fd-053d-4b84-a7a8-86063465bc49_art_crop.jpg",
             "customFeatured": "",
-            "game": null,
             "private": false,
-            "viewCount": 3,
-            "cards": [...],
             "points": 0,
             "userInput": 0,
             "owner": {...},
-            "categories": [...],
             "commentRoot": 5223305,
             "editors": [],
             "parentFolder": 139452,
             "bookmarked": false,
+            "categories": [...],
             "deckTags": [],
-            "cardPackage": null
+            "cardPackage": null,
+            "cards": [...]
         }
         ```
 
