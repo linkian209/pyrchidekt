@@ -4,12 +4,49 @@
     "createdAt": "2023-08-23T22:31:39.567776Z",
     "updatedAt": "2023-09-04T02:22:43.394183Z",
     "deckFormat": 3,
+    "edhBracket": 2,
+    "game": 1,
     "description": "{\"ops\":[]}",
+    "viewCount": 1000,
     "featured": "https://storage.googleapis.com/archidekt-card-images/woe/ae9231fd-053d-4b84-a7a8-86063465bc49_art_crop.jpg",
     "customFeatured": "",
-    "game": null,
     "private": false,
-    "viewCount": 3,
+    "unlisted": false,
+    "theorycrafted": false,
+    "points": 0,
+    "userInput": 0,
+    "owner": {
+        "id": 98649,
+        "username": "NorwegianWhaler",
+        "avatar": "https://storage.googleapis.com/topdekt-user/avatars/default/avatar_colorless.svg",
+        "frame": null,
+        "ckAffiliate": "",
+        "tcgAffiliate": "",
+        "referrerEnum": null
+    },
+    "commentRoot": 5223305,
+    "editors": [],
+    "parentFolder": 139452,
+    "bookmarked": false,
+    "categories": [
+        {
+            "id": 45896363,
+            "name": "Sorcery",
+            "includedInDeck": true,
+            "includedInPrice": true,
+            "isPremier": false
+        },
+        {
+            "id": 45896340,
+            "name": "Commander",
+            "includedInDeck": true,
+            "includedInPrice": true,
+            "isPremier": true
+        }
+    ],
+    "deckTags": [],
+    "playgroupDeckUrl": null,
+    "cardPackage": null,
     "cards": [
         {
             "id": 1462788635,
@@ -245,38 +282,5 @@
                 "rarity": "mythic"
             }
         }
-    ],
-    "points": 0,
-    "userInput": 0,
-    "owner": {
-        "id": 98649,
-        "username": "NorwegianWhaler",
-        "avatar": "https://storage.googleapis.com/topdekt-user/avatars/default/avatar_colorless.svg",
-        "frame": null,
-        "ckAffiliate": "",
-        "tcgAffiliate": "",
-        "referrerEnum": null
-    },
-    "categories": [
-        {
-            "id": 45896363,
-            "name": "Sorcery",
-            "includedInDeck": true,
-            "includedInPrice": true,
-            "isPremier": false
-        },
-        {
-            "id": 45896340,
-            "name": "Commander",
-            "includedInDeck": true,
-            "includedInPrice": true,
-            "isPremier": true
-        }
-    ],
-    "commentRoot": 5223305,
-    "editors": [],
-    "parentFolder": 139452,
-    "bookmarked": false,
-    "deckTags": [],
-    "cardPackage": null
+    ]
 }

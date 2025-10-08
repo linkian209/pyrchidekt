@@ -7,8 +7,9 @@ import pytest
 @pytest.fixture
 def data() -> dict:
     with open("tests/unit/resources/deck.json", "r") as f:
-        return json.load(f)    
+        return json.load(f)
+
 
 class TestArchidekt:
     def testDeckGetsMade(self, data: dict):
-        assert(Deck.fromJson(data))
+        assert Deck.fromJson(data)
