@@ -9,7 +9,7 @@ from .formats import Format
 from .owner import Owner
 from dataclasses import dataclass
 from datetime import datetime
-from typing import Any, List
+from typing import Any, List, Optional
 from warnings import warn
 
 
@@ -63,6 +63,14 @@ class Deck:
         deck_tags: `List[str]` Tags for the deck
 
         card_package: `Any` The package for the deck.
+
+        edh_bracket: `Optional[int]` The EDH bracket the deck is listed as in Archidekt
+
+        unlisted: `bool` Is the deck unlisted or not
+
+        theorycrafted: `bool` Is the deck theorycrafted or not
+
+        playgroup_deck_url: `Optional[str]` The URL of Playgroup.gg the deck is associated with in Archidekt
     """
 
     id: int
@@ -87,6 +95,10 @@ class Deck:
     bookmarked: bool
     deck_tags: List[str]
     card_package: Any
+    edh_bracket: Optional[int]
+    unlisted: bool
+    theorycrafted: bool
+    playgroup_deck_url: Optional[str]
 
     @staticmethod
     def fromJson(data: dict) -> Deck:
@@ -102,12 +114,15 @@ class Deck:
             "createdAt": "2023-08-23T22:31:39.567776Z",
             "updatedAt": "2023-09-04T02:22:43.394183Z",
             "deckFormat": 3,
+            "edhBracket": 2,
             "game": 1,
             "description": "{\"ops\":[]}",
             "viewCount": 1000,
             "featured": "https://storage.googleapis.com/archidekt-card-images/woe/ae9231fd-053d-4b84-a7a8-86063465bc49_art_crop.jpg",
             "customFeatured": "",
             "private": false,
+            "unlisted": false,
+            "theorycrafted": false,
             "points": 0,
             "userInput": 0,
             "owner": {...},
@@ -117,6 +132,7 @@ class Deck:
             "bookmarked": false,
             "categories": [...],
             "deckTags": [],
+            "playgroupDeckUrl": null,
             "cardPackage": null,
             "cards": [...]
         }
@@ -165,6 +181,10 @@ class Deck:
             bookmarked=data["bookmarked"],
             deck_tags=data["deckTags"],
             card_package=data["cardPackage"],
+            edh_bracket=data["edhBracket"],
+            unlisted=data["unlisted"],
+            theorycrafted=data["theorycrafted"],
+            playgroup_deck_url=data["playgroupDeckUrl"]
         )
 
         categories = {x.name: x for x in retval.categories}
