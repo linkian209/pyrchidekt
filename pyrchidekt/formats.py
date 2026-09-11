@@ -37,6 +37,7 @@ class Format(Enum):
     PREDH = 23, "predh"
     TIMELESS = 24, "timeless"
     CANADIAN_HIGHLANDER = 25, "canlander"
+    COMPETITIVE_BRAWL = 26, "competitivebrawl"
 
     def __str__(self: Format) -> str:
         return self.string 
