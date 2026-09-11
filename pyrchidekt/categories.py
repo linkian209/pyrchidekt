@@ -36,6 +36,10 @@ class Category:
     is_premier: bool = field(default=False)
     cards: List[ArchidektCard] = field(default_factory=list)
 
+    def __hash__(self) -> int:
+        """Hashes on the Archidekt category id."""
+        return hash((type(self), self.id))
+
     @staticmethod
     def fromJson(data: dict) -> Category:
         """Creates a category from a dict

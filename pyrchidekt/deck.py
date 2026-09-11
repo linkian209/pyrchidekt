@@ -100,6 +100,10 @@ class Deck:
     theorycrafted: bool
     playgroup_deck_url: Optional[str]
 
+    def __hash__(self) -> int:
+        """Hashes on the Archidekt deck id, which identifies the deck on the server."""
+        return hash((type(self), self.id))
+
     @staticmethod
     def fromJson(data: dict) -> Deck:
         """Creates a `Deck` from a `dict`

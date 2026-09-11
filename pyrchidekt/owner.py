@@ -37,6 +37,10 @@ class Owner:
     tcg_affiliate: str
     referrer_enum: Any
 
+    def __hash__(self) -> int:
+        """Hashes on the Archidekt user id."""
+        return hash((type(self), self.id))
+
     @staticmethod
     def fromJson(data: dict) -> Owner:
         """Creates an `Owner` from a dict

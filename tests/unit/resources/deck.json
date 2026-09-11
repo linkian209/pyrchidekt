@@ -2,14 +2,15 @@
     "id": 12345,
     "name": "Test Deck",
     "createdAt": "2023-08-23T22:31:39.567776Z",
-    "updatedAt": "2023-09-04T02:22:43.394183Z",
+    "updatedAt": "2026-06-27T05:46:34.640858Z",
     "deckFormat": 3,
-    "edhBracket": 2,
-    "game": 1,
+    "edhBracket": null,
+    "game": null,
     "description": "{\"ops\":[]}",
-    "viewCount": 1000,
+    "viewCount": 2089,
     "featured": "https://storage.googleapis.com/archidekt-card-images/woe/ae9231fd-053d-4b84-a7a8-86063465bc49_art_crop.jpg",
     "customFeatured": "",
+    "hasPrimer": false,
     "private": false,
     "unlisted": false,
     "theorycrafted": false,
@@ -25,141 +26,30 @@
         "referrerEnum": null
     },
     "commentRoot": 5223305,
-    "editors": [],
-    "parentFolder": 139452,
+    "editors": null,
+    "parentFolder": 512502,
     "bookmarked": false,
     "categories": [
         {
-            "id": 45896363,
-            "name": "Sorcery",
+            "id": 45902140,
+            "name": "Enchantment",
+            "isPremier": false,
             "includedInDeck": true,
-            "includedInPrice": true,
-            "isPremier": false
+            "includedInPrice": true
         },
         {
             "id": 45896340,
             "name": "Commander",
+            "isPremier": true,
             "includedInDeck": true,
-            "includedInPrice": true,
-            "isPremier": true
+            "includedInPrice": true
         }
     ],
     "deckTags": [],
     "playgroupDeckUrl": null,
     "cardPackage": null,
+    "deckHelp": null,
     "cards": [
-        {
-            "id": 1462788635,
-            "categories": [
-                "Sorcery"
-            ],
-            "companion": false,
-            "flippedDefault": false,
-            "label": ",#656565",
-            "modifier": "Normal",
-            "quantity": 1,
-            "customCmc": null,
-            "removedCategories": null,
-            "createdAt": "2023-08-23T22:32:45.620445Z",
-            "updatedAt": "2023-08-23T22:32:45.620493Z",
-            "deletedAt": null,
-            "card": {
-                "id": 65311,
-                "artist": "Jiang Zhuqing",
-                "tcgProductId": 433,
-                "ckFoilId": 0,
-                "ckNormalId": 65104,
-                "cmEd": "portal three kingdoms",
-                "collectorNumber": "37",
-                "multiverseid": 10621,
-                "mtgoFoilId": 0,
-                "mtgoNormalId": 0,
-                "uid": "a0f7b8b1-f1dc-46a3-8f4a-c6181e8a049f",
-                "displayName": null,
-                "edition": {
-                    "editioncode": "ptk",
-                    "editionname": "Portal Three Kingdoms",
-                    "editiondate": "1999-05-01",
-                    "editiontype": "starter",
-                    "mtgoCode": null
-                },
-                "flavor": "Using nature to their advantage, wise Three Kingdoms generals often let dammed rivers loose to destroy their enemies.",
-                "games": [],
-                "options": [
-                    "Normal"
-                ],
-                "oracleCard": {
-                    "id": 2064,
-                    "cmc": 1,
-                    "colorIdentity": [
-                        "Blue"
-                    ],
-                    "colors": [
-                        "Blue"
-                    ],
-                    "faces": [],
-                    "layout": "normal",
-                    "legalities": {
-                        "alchemy": "not_legal",
-                        "legacy": "legal",
-                        "oldschool": "not_legal",
-                        "modern": "not_legal",
-                        "vintage": "legal",
-                        "oathbreaker": "legal",
-                        "1v1": "legal",
-                        "historicbrawl": "not_legal",
-                        "premodern": "not_legal",
-                        "historic": "not_legal",
-                        "commander": "legal",
-                        "paupercommander": "legal",
-                        "gladiator": "not_legal",
-                        "explorer": "not_legal",
-                        "brawl": "not_legal",
-                        "penny": "not_legal",
-                        "pioneer": "not_legal",
-                        "duel": "legal",
-                        "pauper": "legal",
-                        "standard": "not_legal",
-                        "future": "not_legal",
-                        "predh": "legal"
-                    },
-                    "manaCost": "{U}",
-                    "manaProduction": {
-                        "W": null,
-                        "U": null,
-                        "B": null,
-                        "R": null,
-                        "G": null,
-                        "C": null
-                    },
-                    "name": "Broken Dam",
-                    "power": "",
-                    "salt": 0.32,
-                    "subTypes": [],
-                    "superTypes": [],
-                    "text": "Tap one or two target creatures without horsemanship.",
-                    "tokens": [],
-                    "toughness": "",
-                    "types": [
-                        "Sorcery"
-                    ],
-                    "loyalty": null,
-                    "defaultCategory": null
-                },
-                "owned": 0,
-                "prices": {
-                    "ck": 5.49,
-                    "ckfoil": 0.0,
-                    "cm": 2.5,
-                    "cmfoil": 0.0,
-                    "mtgo": 0.0,
-                    "mtgofoil": 0.0,
-                    "tcg": 5.93,
-                    "tcgfoil": 0.0
-                },
-                "rarity": "common"
-            }
-        },
         {
             "id": 1462788365,
             "categories": [
@@ -173,21 +63,27 @@
             "customCmc": null,
             "removedCategories": null,
             "createdAt": "2023-08-23T22:32:18.118305Z",
-            "updatedAt": "2023-09-03T16:27:36.290285Z",
+            "updatedAt": "2023-11-26T23:01:11.377739Z",
             "deletedAt": null,
+            "notes": null,
             "card": {
                 "id": 122970,
                 "artist": "Ekaterina Burmak",
                 "tcgProductId": 512193,
                 "ckFoilId": 282308,
                 "ckNormalId": 281587,
-                "cmEd": "wilds of eldraine",
+                "cmEd": "",
+                "scgSku": "SGL-MTG-WOE-206-ENN",
+                "scgFoilSku": "SGL-MTG-WOE-206-ENF",
+                "cardTraderSku": "256874",
                 "collectorNumber": "206",
-                "multiverseid": 0,
+                "multiverseid": 629707,
                 "mtgoFoilId": 0,
-                "mtgoNormalId": 0,
+                "mtgoNormalId": 116756,
                 "uid": "ae9231fd-053d-4b84-a7a8-86063465bc49",
                 "displayName": null,
+                "releasedAt": "2023-09-08",
+                "contentWarning": false,
                 "edition": {
                     "editioncode": "woe",
                     "editionname": "Wilds of Eldraine",
@@ -201,6 +97,7 @@
                     "Normal",
                     "Foil"
                 ],
+                "scryfallImageHash": "1783915071",
                 "oracleCard": {
                     "id": 35949,
                     "cmc": 4,
@@ -212,10 +109,12 @@
                         "White",
                         "Blue"
                     ],
+                    "edhrecRank": 6688,
                     "faces": [],
                     "layout": "normal",
+                    "uid": "1733c71b-fd28-48dd-8a3d-41afd4b22f0e",
                     "legalities": {
-                        "alchemy": "legal",
+                        "alchemy": "not_legal",
                         "legacy": "legal",
                         "oldschool": "not_legal",
                         "modern": "legal",
@@ -223,20 +122,23 @@
                         "oathbreaker": "legal",
                         "1v1": "legal",
                         "historicbrawl": "legal",
+                        "competitivebrawl": "legal",
                         "premodern": "not_legal",
                         "historic": "legal",
                         "commander": "legal",
                         "paupercommander": "not_legal",
                         "gladiator": "legal",
-                        "explorer": "legal",
+                        "explorer": null,
                         "brawl": "legal",
-                        "penny": "not_legal",
+                        "penny": "legal",
                         "pioneer": "legal",
                         "duel": "legal",
                         "pauper": "not_legal",
                         "standard": "legal",
                         "future": "legal",
-                        "predh": "not_legal"
+                        "predh": "not_legal",
+                        "timeless": "legal",
+                        "canlander": "legal"
                     },
                     "manaCost": "{2}{W}{U}",
                     "manaProduction": {
@@ -249,7 +151,7 @@
                     },
                     "name": "Hylda of the Icy Crown",
                     "power": "3",
-                    "salt": null,
+                    "salt": 0.58,
                     "subTypes": [
                         "Human",
                         "Warlock"
@@ -257,7 +159,39 @@
                     "superTypes": [
                         "Legendary"
                     ],
-                    "text": "Whenever you tap an untapped creature an opponent controls, you may pay {1}. When you do, choose one —\n• Create a 4/4 white and blue Elemental creature token.\n• Put a +1/+1 counter on each creature you control.\n• Scry 2, then draw a card.",
+                    "keywords": [
+                        "Scry"
+                    ],
+                    "oTags": [
+                        "creates bigger body",
+                        "draw engine",
+                        "gains pp counters",
+                        "gives pp counters to all",
+                        "hate-tapped",
+                        "modal",
+                        "reflexive trigger",
+                        "repeatable pp counters",
+                        "repeatable pure draw",
+                        "scry"
+                    ],
+                    "inheritedTags": [
+                        "bottom deck manipulation",
+                        "card advantage",
+                        "draw",
+                        "gives pp counters",
+                        "hate",
+                        "library manipulation",
+                        "peek",
+                        "peek-library",
+                        "power boost to all",
+                        "pure draw",
+                        "repeatable card advantage",
+                        "repeatable draw",
+                        "top deck manipulation",
+                        "toughness boost to all",
+                        "triggered ability"
+                    ],
+                    "text": "Whenever you tap an untapped creature an opponent controls, you may pay {1}. When you do, choose one \u2014\n\u2022 Create a 4/4 white and blue Elemental creature token.\n\u2022 Put a +1/+1 counter on each creature you control.\n\u2022 Scry 2, then draw a card.",
                     "tokens": [
                         "36804"
                     ],
@@ -266,21 +200,232 @@
                         "Creature"
                     ],
                     "loyalty": null,
-                    "defaultCategory": null
+                    "canlanderPoints": null,
+                    "isPDHCommander": false,
+                    "defaultCategory": "Draw",
+                    "gameChanger": false,
+                    "extraTurns": false,
+                    "tutor": false,
+                    "massLandDenial": false,
+                    "twoCardComboSingelton": false,
+                    "twoCardComboIds": [],
+                    "atomicCombos": [],
+                    "potentialCombos": [],
+                    "lang": "en"
                 },
                 "owned": 0,
+                "pinnedStatus": 0,
                 "prices": {
-                    "ck": 0.99,
-                    "ckfoil": 2.49,
-                    "cm": 0.0,
-                    "cmfoil": 0.0,
-                    "mtgo": 0.0,
+                    "ck": 5.49,
+                    "ckfoil": 5.99,
+                    "ckMinimum": 5.49,
+                    "cm": 1.2,
+                    "cmfoil": 3.98,
+                    "cmMinimum": 1.2,
+                    "mtgo": 0.02,
                     "mtgofoil": 0.0,
-                    "tcg": 1.04,
-                    "tcgfoil": 4.45
+                    "mtgoMinimum": 0.02,
+                    "tcg": 3.91,
+                    "tcgfoil": 4.73,
+                    "tcgMinimum": 3.91,
+                    "scg": 3.49,
+                    "scgfoil": 3.99,
+                    "scgMinimum": 11.99,
+                    "mp": 3.33,
+                    "mpfoil": 4.38,
+                    "mpMinimum": 3.33,
+                    "tcgLand": 139.0,
+                    "tcgLandFoil": 0.0,
+                    "tcgLandMinimum": 139.0,
+                    "cardTrader": 2.6,
+                    "cardTraderFoil": 3.0,
+                    "cardTraderMinimum": 2.6,
+                    "cs": 3.7,
+                    "csfoil": 4.4,
+                    "csMinimum": 3.7
                 },
-                "rarity": "mythic"
+                "rarity": "mythic",
+                "globalCategories": []
+            }
+        },
+        {
+            "id": 1462958466,
+            "categories": [
+                "Enchantment"
+            ],
+            "companion": false,
+            "flippedDefault": false,
+            "label": "Have,#37d67a",
+            "modifier": "Normal",
+            "quantity": 1,
+            "customCmc": null,
+            "removedCategories": null,
+            "createdAt": "2023-08-24T03:44:55.460129Z",
+            "updatedAt": "2023-11-26T23:01:11.387555Z",
+            "deletedAt": null,
+            "notes": null,
+            "card": {
+                "id": 122761,
+                "artist": "Daisuke Tatsuma",
+                "tcgProductId": 509562,
+                "ckFoilId": 0,
+                "ckNormalId": 0,
+                "cmEd": "",
+                "scgSku": "SGL-MTG-WOT2-067-ENN",
+                "scgFoilSku": "SGL-MTG-WOT2-067-ENF",
+                "cardTraderSku": "257386",
+                "collectorNumber": "67",
+                "multiverseid": 632392,
+                "mtgoFoilId": 0,
+                "mtgoNormalId": 115958,
+                "uid": "58178dd4-c61e-4017-b2e6-2d8308ded4fd",
+                "displayName": null,
+                "releasedAt": "2023-09-08",
+                "contentWarning": false,
+                "edition": {
+                    "editioncode": "wot",
+                    "editionname": "Wilds of Eldraine: Enchanting Tales",
+                    "editiondate": "2023-09-08",
+                    "editiontype": "masterpiece",
+                    "mtgoCode": "wot"
+                },
+                "flavor": "",
+                "games": [],
+                "options": [
+                    "Normal",
+                    "Foil"
+                ],
+                "scryfallImageHash": "1783914914",
+                "oracleCard": {
+                    "id": 15255,
+                    "cmc": 4,
+                    "colorIdentity": [
+                        "White"
+                    ],
+                    "colors": [
+                        "White"
+                    ],
+                    "edhrecRank": 65,
+                    "faces": [],
+                    "layout": "normal",
+                    "uid": "153376c9-dffd-458c-8ce3-a4c8269bc4e9",
+                    "legalities": {
+                        "alchemy": "not_legal",
+                        "legacy": "legal",
+                        "oldschool": "not_legal",
+                        "modern": "legal",
+                        "vintage": "legal",
+                        "oathbreaker": "legal",
+                        "1v1": "legal",
+                        "historicbrawl": "legal",
+                        "competitivebrawl": "legal",
+                        "premodern": "not_legal",
+                        "historic": "legal",
+                        "commander": "legal",
+                        "paupercommander": "not_legal",
+                        "gladiator": "legal",
+                        "explorer": null,
+                        "brawl": "not_legal",
+                        "penny": "legal",
+                        "pioneer": "legal",
+                        "duel": "legal",
+                        "pauper": "not_legal",
+                        "standard": "not_legal",
+                        "future": "not_legal",
+                        "predh": "not_legal",
+                        "timeless": "legal",
+                        "canlander": "legal"
+                    },
+                    "manaCost": "{3}{W}",
+                    "manaProduction": {
+                        "W": 1,
+                        "U": 1,
+                        "B": 1,
+                        "R": 1,
+                        "G": 1,
+                        "C": null
+                    },
+                    "name": "Smothering Tithe",
+                    "power": "",
+                    "salt": 2.58,
+                    "subTypes": [],
+                    "superTypes": [],
+                    "keywords": [
+                        "Treasure"
+                    ],
+                    "oTags": [
+                        "draw hate",
+                        "meme",
+                        "ramp",
+                        "repeatable treasures",
+                        "rhystic",
+                        "triggered ability"
+                    ],
+                    "inheritedTags": [
+                        "hate",
+                        "repeatable artifact tokens",
+                        "repeatable noncreature tokens",
+                        "repeatable token generator",
+                        "tax"
+                    ],
+                    "text": "Whenever an opponent draws a card, that player may pay {2}. If the player doesn't, you create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+                    "tokens": [
+                        "17448"
+                    ],
+                    "toughness": "",
+                    "types": [
+                        "Enchantment"
+                    ],
+                    "loyalty": null,
+                    "canlanderPoints": null,
+                    "isPDHCommander": false,
+                    "defaultCategory": "Ramp",
+                    "gameChanger": true,
+                    "extraTurns": false,
+                    "tutor": false,
+                    "massLandDenial": false,
+                    "twoCardComboSingelton": false,
+                    "twoCardComboIds": [],
+                    "atomicCombos": [],
+                    "potentialCombos": [],
+                    "lang": "en"
+                },
+                "owned": 0,
+                "pinnedStatus": 0,
+                "prices": {
+                    "ck": 249.99,
+                    "ckfoil": 599.99,
+                    "ckMinimum": 64.99,
+                    "cm": 152.5,
+                    "cmfoil": 370.0,
+                    "cmMinimum": 24.99,
+                    "mtgo": 3.02,
+                    "mtgofoil": 0.0,
+                    "mtgoMinimum": 0.02,
+                    "tcg": 198.65,
+                    "tcgfoil": 416.34,
+                    "tcgMinimum": 55.32,
+                    "scg": 224.99,
+                    "scgfoil": 499.99,
+                    "scgMinimum": 119.99,
+                    "mp": 204.2,
+                    "mpfoil": 468.9,
+                    "mpMinimum": 55.06,
+                    "tcgLand": 6986.0,
+                    "tcgLandFoil": 13920.0,
+                    "tcgLandMinimum": 1773.0,
+                    "cardTrader": 168.64,
+                    "cardTraderFoil": 396.63,
+                    "cardTraderMinimum": 45.54,
+                    "cs": 184.5,
+                    "csfoil": 387.2,
+                    "csMinimum": 52.04
+                },
+                "rarity": "mythic",
+                "globalCategories": []
             }
         }
-    ]
+    ],
+    "customCards": [],
+    "intentionallySkippedCardData": false
 }

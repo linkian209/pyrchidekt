@@ -32,6 +32,10 @@ class Edition:
     type: str
     mtgo_code: Any
 
+    def __hash__(self) -> int:
+        """Hashes on the set code, as editions carry no id."""
+        return hash((type(self), self.code))
+
     @staticmethod
     def fromJson(data: dict) -> Edition:
         """Returns an Edition object from a `dict`

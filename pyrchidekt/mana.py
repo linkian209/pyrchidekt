@@ -33,6 +33,13 @@ class ManaProduction:
     green: int
     colorless: int
 
+    def __hash__(self) -> int:
+        """Hashes on the produced mana, as this class carries no identifier."""
+        return hash(
+            (type(self), self.white, self.blue, self.black, self.red, self.green,
+             self.colorless)
+        )
+
     @staticmethod
     def fromJson(data: dict) -> ManaProduction:
         """Creates a ManaProduction from a `dict`

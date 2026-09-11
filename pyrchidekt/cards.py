@@ -23,6 +23,9 @@ class OracleCard:
     Attributes:
         id: `int` The ID of the card
 
+        uid: `str` The Scryfall oracle id, stable across every printing of the card. Distinct from
+            `Card.uid`, which identifies a single printing.
+
         cmc: `int` The converted mana cost as an integer
 
         color_identity: `List[str]` The color identity represented as a list of strings.
@@ -65,25 +68,36 @@ class OracleCard:
     """
 
     id: int = field(default=-1)
+    uid: str = field(default="")
     cmc: int = field(default=-1)
-    color_identity: List[str] = field(default=list)
-    colors: List[str] = field(default=list)
-    faces: List = field(default=list)
+    color_identity: List[str] = field(default_factory=list)
+    colors: List[str] = field(default_factory=list)
+    faces: List = field(default_factory=list)
     layout: str = field(default="")
-    legalities: Dict[Format, bool] = field(default=dict)
+    legalities: Dict[Format, bool] = field(default_factory=dict)
     mana_cost: str = field(default="")
-    mana_production: ManaProduction = field(default=ManaProduction)
+    mana_production: ManaProduction = field(
+        default_factory=lambda: ManaProduction(0, 0, 0, 0, 0, 0)
+    )
     name: str = field(default="")
     power: str = field(default="")
     salt: float = field(default=-1.0)
-    sub_types: List[str] = field(default=list)
-    super_types: List[str] = field(default=list)
+    sub_types: List[str] = field(default_factory=list)
+    super_types: List[str] = field(default_factory=list)
     text: str = field(default="")
-    tokens: List[str] = field(default=list)
+    tokens: List[str] = field(default_factory=list)
     toughness: str = field(default="")
-    types: List[str] = field(default=list)
+    types: List[str] = field(default_factory=list)
     loyalty: str = field(default="")
     default_category: str = field(default="")
+
+    def __hash__(self) -> int:
+        """Hashes on the Scryfall oracle id, falling back to the Archidekt id and name.
+
+        The fallback matters because `uid` is absent for tokens and custom cards, and `id`
+        alone defaults to -1 for every hand-constructed instance.
+        """
+        return hash((type(self), self.uid or (self.id, self.name)))
 
     @staticmethod
     def fromJson(data: dict) -> OracleCard:
@@ -93,6 +107,7 @@ class OracleCard:
         ```json
         {
             "id": 35949,
+            "uid": "1733c71b-fd28-48dd-8a3d-41afd4b22f0e",
             "cmc": 4,
             "colorIdentity": [
                 "White",
@@ -183,6 +198,7 @@ class OracleCard:
 
         return OracleCard(
             id=data["id"],
+            uid=data.get("uid") or "",
             cmc=data["cmc"],
             color_identity=data["colorIdentity"],
             colors=data["colors"],
@@ -274,6 +290,10 @@ class Card:
     owned: int
     prices: Dict[str, float]
     rarity: str
+
+    def __hash__(self) -> int:
+        """Hashes on the Archidekt printing id."""
+        return hash((type(self), self.id))
 
     @staticmethod
     def fromJson(data: dict) -> Card:
@@ -406,6 +426,10 @@ class ArchidektCard:
     created_at: datetime
     updated_at: datetime
     deleted_at: datetime | None
+
+    def __hash__(self) -> int:
+        """Hashes on the Archidekt id of this card's entry in the deck."""
+        return hash((type(self), self.id))
 
     @staticmethod
     def fromJson(data: dict) -> ArchidektCard:
