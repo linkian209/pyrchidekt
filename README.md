@@ -20,39 +20,34 @@ for category in deck.categories:
 ```
 
 # Developing
-It is encouraged to use virtual environments to develop `pyrchidekt`. To start developing, install the requirements:
+This project uses `uv` as the package manager and publisher. To start developing, first [install uv](https://docs.astral.sh/uv/getting-started/installation/), then sync the dependencies.
 ```shell
-pip install -r requirements/dev.txt
+uv sync
 ```
 
 # Testing
-Testing will be run on PRs and before deploys for new releases. For local testing, see below.
+Testing will be run on PRs and before deploys for new releases.
 
-## Setup
-You must additionally install the testing dependencies:
-```shell
-pip install -r requirements/test.txt
-```
 All tests can be run as follows:
 ```shell
-coverage run -m pytest tests
+uv run coverage run -m pytest tests
 ```
 With reporting then checked using:
 ```shell 
-coverage report
+uv run coverage report
 ```
 There are two types of tests: unit and integration. 
 
 ## Unit Tests
 Unit tests ensure that the basic data `dict` conversion works correctly from how the inferred API works. These are run as follows:
 ```shell
-coverage run -m pytest tests/unit
+uv run coverage run -m pytest tests/unit
 ```
 These tests should be run often when changing the dataclasses
 
 ## Integration Tests
 Integration tests ensure that `pyrchidekt` works with the current API of Archidekt. They are run as follows:
 ```shell
-coverage run -m pytest tests/integration
+uv run coverage run -m pytest tests/integration
 ```
 These tests can be run less frequently. So long as Archidekt doesn't change their API data structures, these will pass.

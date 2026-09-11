@@ -18,34 +18,33 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - {name: '3.14-dev', python: '3.14-dev', os: ubuntu-latest}
+          - {name: '3.15-dev', python: '3.15-dev', os: ubuntu-latest}
+          - {name: '3.14', python: '3.14', os: ubuntu-latest}
           - {name: '3.13', python: '3.13', os: ubuntu-latest}
           - {name: '3.12', python: '3.12', os: ubuntu-latest}
           - {name: '3.11', python: '3.11', os: ubuntu-latest}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - name: Setup
-        uses: actions/setup-python@v4
+      - name: setup Python and uv
+        uses: astral-sh/setup-uv@v7
         with:
+          enable-cache: true
           python-version: ${{ matrix.python }}
-          cache: "pip"
-          cache-dependency-path: "requirements/*.txt"
 
-      - name: Install dependencies
+      - name: install dependencies
         run: |
-          pip install -r requirements/dev.txt
-          pip install -r requirements/test.txt
+          uv sync --frozen
 
       - name: Run Tests
         run: |
-          coverage run -m pytest tests
-          coverage report
-          coverage html
+          uv run coverage run -m pytest tests
+          uv run coverage report
+          uv run coverage html
         
       - name: Upload Test Results 
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: code-coverage-report-${{ matrix.name }}
           path: htmlcov

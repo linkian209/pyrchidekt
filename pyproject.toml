@@ -18,7 +18,10 @@ requires-python = ">=3.11"
 dependencies = ["requests", "aenum"]
 dynamic = ["version"]
 
-[project.optional-dependencies]
-test = ["pytest", "coverage"]
-
 [tool.setuptools_scm]
+
+[dependency-groups]
+dev = [
+    "coverage>=7.16.0",
+    "pytest>=9.1.1",
+]
